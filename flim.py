@@ -6,7 +6,7 @@ import struct
 import attr
 import construct as c
 
-clim_header_struct = c.Struct(
+flim_header_struct = c.Struct(
     c.Const(b'FLIM'),  # TODO 'FLIM' in SUMO
     'endianness' / c.Const(0xfeff, c.Int16ul),
     'header_length' / c.Const(0x14, c.Int16ul),
@@ -338,7 +338,7 @@ def untile_pixels(raw_pixels, width, height, *, is_flim):
     return pixels
 
 
-def decode_clim(data):
+def decode_flim(data):
     file_format = data[-40:-36]
     if file_format == b'CLIM':
         is_flim = False
@@ -407,7 +407,7 @@ class DecodedImageData:
             row.reverse()
 
     def write_to_png(self, f):
-        """Write the results of ``decode_clim`` to a file object."""
+        """Write the results of ``decode_flim`` to a file object."""
         import png
 
         writer_kwargs = dict(width=self.width, height=self.height)
