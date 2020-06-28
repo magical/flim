@@ -8,15 +8,15 @@ import construct as c
 
 clim_header_struct = c.Struct(
     c.Const(b'FLIM'),  # TODO 'FLIM' in SUMO
-    'endianness' / c.Const(c.Int16ul, 0xfeff),
-    'header_length' / c.Const(c.Int16ul, 0x14),
+    'endianness' / c.Const(0xfeff, c.Int16ul),
+    'header_length' / c.Const(0x14, c.Int16ul),
     'version' / c.Int32ul,
     'file_size' / c.Int32ul,
     'blocks_ct' / c.Int32ul,
 )
 imag_header_struct = c.Struct(
     c.Const(b'imag'),
-    'section_length' / c.Const(c.Int32ul, 0x10),
+    'section_length' / c.Const(0x10, c.Int32ul),
     'width' / c.Int16ul,
     'height' / c.Int16ul,
     #'format' / c.Int32ul,
