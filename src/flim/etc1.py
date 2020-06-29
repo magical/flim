@@ -173,6 +173,4 @@ def decode_etc1(data, width=128, height=128, use_alpha=True, is_flim=False):
                         outpixels[y][x] = color
 
     # 4 is the bit depth; None is the palette
-    from .flim import DecodedImageData, COLOR_FORMATS
-    # FIXME stupid import, wrong color format
-    return DecodedImageData(width, height, COLOR_FORMATS['ETC1A4'], None, outpixels)
+    return width, height, 4, None, outpixels
