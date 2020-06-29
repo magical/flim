@@ -5,8 +5,8 @@ setup(
     version="0.1",
     packages=["flim"],
     install_requires=[
-        "attrs",
-        "construct",
-        "pypng",
+        "attrs==19.3.0",
+        "construct==2.10.56",
+        "pypng==0.0.19",
     ],
 )
