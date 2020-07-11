@@ -1,5 +1,7 @@
-Standalone decoder for FLIM, which is an image format used in some 3DS games.
+Standalone decoder for [BFLIM][], which is an image format used in some 3DS games.
 Extracted from <https://github.com/veekun/pokedex/tree/yaml/pokedex/extract>.
+
+[BFLIM]: http://mk8.tockdom.com/wiki/BFLIM_(File_Format)
 
 Install:
 
@@ -7,5 +9,5 @@ Install:
 
 Use:
 
-    python -m flim image.bin >image.png
+    python -m flim image.bflim >image.png
 
